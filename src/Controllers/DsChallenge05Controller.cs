@@ -8,19 +8,19 @@ namespace ds_challenge_05.Controllers;
 public class ChallengeMethodController : ControllerBase
 {
     [HttpGet(Name = "ChallengeMethod")]
-    public string ChallengeMethod()
+    public string Get()
     {
         string name = "OpenShift DevSpaces";
-        int length = name.Length;
+        return ChallengeMethod(name);
+    }
 
-        for (int index = 0; index < length; index++)
+    public string ChallengeMethod(string name)
+    {
+        if (name.Length > 4)
         {
-            char indexChar = name[index];
-            if (index == 4) // Zero-based index system
-            {
-                char fifthCharacter = indexChar;
-                return $"The Fifth Character in the word \"OpenShift\"=[{fifthCharacter}]\n";
-            }
+            // Zero-based index system
+            char fifthCharacter = name[4];
+            return $"The Fifth Character in \"{name}\" is [{fifthCharacter}]\n";
         }
 
         return "String is shorter than length 5 \n";

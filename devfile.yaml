@@ -87,6 +87,9 @@ components:
       endpoints:
         - name: mssql
           targetPort: 1433
+  - volume:
+      size: 2Gi
+    name: sqlserverdb
 events:
   preStart:
     - prep-workspace

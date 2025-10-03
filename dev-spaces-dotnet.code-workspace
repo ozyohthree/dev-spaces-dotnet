@@ -22,7 +22,7 @@
 		"workbench.preferredDarkColorTheme": "Default Dark Modern",
 		"workbench.preferredLightColorTheme": "Winter is Coming (Light)",
 		"editor.wordWrap": "on",
-		"files.autoSave": "off",
+		"files.autoSave": "afterDelay",
 		"dotnetAcquisitionExtension.existingDotnetPath": [
         {
             "extensionId": "muhammad-sammy.csharp",

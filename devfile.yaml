@@ -64,10 +64,7 @@ components:
   - name: mssql
     container:
       image: mcr.microsoft.com/mssql/server:2022-latest
-      memoryLimit: 2Gi
-      memoryRequest: 1Gi
-      cpuLimit: '2'
-      cpuRequest: 500m
+      memoryLimit: 512M
       sourceMapping: /projects/home
       mountSources: true      
       env:

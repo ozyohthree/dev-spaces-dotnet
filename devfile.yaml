@@ -61,6 +61,32 @@ components:
       env:
       - name: HOME
         value: "/projects/home"
+  - name: mssql
+    container:
+      image: mcr.microsoft.com/mssql/server:2022-latest
+      memoryLimit: 2Gi
+      memoryRequest: 1Gi
+      cpuLimit: '2'
+      cpuRequest: 500m
+      sourceMapping: /projects/home
+      mountSources: true      
+      env:
+        - name: ACCEPT_EULA
+          value: 'Y'
+        - name: MSSQL_SA_PASSWORD
+          value: 'm55sqlp4ssw0rd'
+        - name: SA_USERNAME
+          value: 'sa'
+        - name: SA_PASSWORD
+          value: 'm55sqlp4ssw0rd'
+        - name: SA_NAME
+          value: 'sa'
+      volumeMounts:
+        - name: sqlserverdb
+          path: /var/opt/mssql
+      endpoints:
+        - name: mssql
+          targetPort: 1433
 events:
   preStart:
     - prep-workspace

@@ -25,4 +25,15 @@ public class ChallengeMethodController : ControllerBase
 
         return "String is shorter than length 5 \n";
     }
+
+    // Overloaded method
+    public string ChallengeMethod(string name, int index)
+    {
+        if (index >= 0 && index < name.Length)
+        {
+            char character = name[index];
+            return $"The Character at index [{index}] in \"{name}\" is [{character}]\n";
+        }
+        return $"Index [{index}] is out of bounds for \"{name}\"\n";
+    }
 }

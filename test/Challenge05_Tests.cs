@@ -34,4 +34,37 @@ public class Challenge05_Tests
         // Assert
         Assert.Equal(expected, result);
     }
+
+    [Fact]
+    public void ChallengeMethod_ReturnsFifthCharacter_WhenStringLongEnough()
+    {
+        var controller = new ChallengeMethodController();
+        string result = controller.ChallengeMethod("OpenShift DevSpaces");
+        Assert.Contains("The Fifth Character", result);
+        Assert.Contains("[S]", result); // "OpenShift DevSpaces"[4] == 'S'
+    }
+
+    [Fact]
+    public void ChallengeMethod_ReturnsError_WhenStringTooShort()
+    {
+        var controller = new ChallengeMethodController();
+        string result = controller.ChallengeMethod("Test");
+        Assert.Equal("String is shorter than length 5 \n", result);
+    }
+
+    [Fact]
+    public void ChallengeMethod_Overload_ReturnsCharacterAtIndex()
+    {
+        var controller = new ChallengeMethodController();
+        string result = controller.ChallengeMethod("OpenShift", 2);
+        Assert.Equal("The Character at index [2] in \"OpenShift\" is [e]\n", result);
+    }
+
+    [Fact]
+    public void ChallengeMethod_Overload_ReturnsOutOfBounds_WhenIndexInvalid()
+    {
+        var controller = new ChallengeMethodController();
+        string result = controller.ChallengeMethod("OpenShift", 20);
+        Assert.Equal("Index [20] is out of bounds for \"OpenShift\"\n", result);
+    }
 }

@@ -18,7 +18,7 @@ components:
     #       # Ask for an unmasked /proc to be available to this container
     #       procMount: Unmasked
     container:
-      image: quay.io/ohthree/dot-net:ubi10
+      image: quay.io/cgruver0/che/dot-net:ubi
       mountSources: true
       cpuRequest: 50m
       cpuLimit: 1000m

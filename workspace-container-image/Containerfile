@@ -5,7 +5,7 @@ ARG WORK_DIR="/projects"
 
 # ARG INSTALL_PACKAGES="dotnet-runtime-9.0"
 
-ARG INSTALL_PACKAGES="procps-ng openssl git tar gzip zip xz unzip which shadow-utils bash zsh vi wget curl jq podman buildah skopeo python3-pip python3-devel fuse-overlayfs util-linux vim-minimal vim-enhanced dotnet-hostfxr-9.0 dotnet-runtime-9.0 dotnet-sdk-9.0"
+ARG INSTALL_PACKAGES="procps-ng openssl git tar gzip zip xz unzip which shadow-utils bash zsh vi wget curl jq podman buildah skopeo python3-pip python3-devel fuse-overlayfs util-linux vim-minimal vim-enhanced dotnet-hostfxr-8.0 dotnet-runtime-8.0 dotnet-sdk-8.0"
 
 ENV HOME=${USER_HOME_DIR}
 ENV BUILDAH_ISOLATION=chroot
